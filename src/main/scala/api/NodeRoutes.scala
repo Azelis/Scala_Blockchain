@@ -24,6 +24,7 @@ trait NodeRoutes extends SprayJsonSupport {
 
   implicit lazy val timeout = Timeout(5.seconds)
 
+  // Not sure whether we need to call this variable one more time, so lazy val solves it
   lazy val statusRoutes: Route = pathPrefix("status") {
     concat(
       pathEnd {
